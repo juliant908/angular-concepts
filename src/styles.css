@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #2c2439;
+  color: white;
+  line-height: 1.6;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.observable-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.operator {
+  font-weight: bold;
+  color: blue;
+}

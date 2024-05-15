@@ -1,0 +1,14 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator map example</h2>
+<code>
+  <div>const observable = of(1,2,3);</div>
+  observable.pipe(<span class="operator">map(val => val * 2)</span>).subscribe((value) => console.log(value));
+</code>
+<div class="observable-container">
+  @for(item of valuesFromObservable; track $index){
+  <p>Observable value: {{ item }}</p>
+  }
+</div>
+<p>The map operator takes each value from the observable one by one and transforms it using the operation defined inside</p>
+<p>In this case it takes the value and multiplies it by two</p>

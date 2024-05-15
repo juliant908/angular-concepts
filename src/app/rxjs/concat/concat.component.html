@@ -1,0 +1,16 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator concat example</h2>
+<code>
+  <div>const observable1 = of(1,2,3);</div>
+  <div>const observable2 = of(3,4,5,6);</div>
+  <span class="operator">concat</span>(observable1, observable2).subscribe((value) => console.log(value));
+</code>
+<div class="observable-container">
+  @for(item of valuesFromConcat; track $index){
+  <p>Observable value: {{ item }}</p>
+  }
+</div>
+<p>The concat operator merges two (or more) observables into one observable, unlike merge, which fires emissions as they come, concat waits for the previous Observable to complete before it starts the next one.
+</p>
+<p>IT DOESN'T REMOVE REPEATED VALUES</p>

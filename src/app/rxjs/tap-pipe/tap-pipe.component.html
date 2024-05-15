@@ -1,0 +1,15 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator tap example</h2>
+<code>
+  <div>const observable1 = of(1,2,3);</div>
+  this.observable1.pipe(map(val => val + 1))<span class="operator">tap(val => console.log(val))</span>.subscribe((value) => console.log(value));
+</code>
+<div class="observable-container">
+  @for(item of valuesFromObservable; track $index){
+  <p>Observable value: {{ item }}</p>
+  }
+</div>
+<p>The tap operator is very useful to see the values being passed through the data stream without modifying them. It is a side effect operator.
+</p>
+<p>It is useful for debugging purposes</p>

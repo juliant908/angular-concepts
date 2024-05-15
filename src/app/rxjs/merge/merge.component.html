@@ -1,0 +1,16 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator merge example</h2>
+<code>
+  <div>const observable1 = of(1,2,3);</div>
+  <div>const observable2 = of(3,4,5,6);</div>
+  <span class="operator">merge</span>(observable1, observable2).subscribe((value) => console.log(value));
+</code>
+<div class="observable-container">
+  @for(item of valuesFromMerge; track $index){
+  <p>Observable value: {{ item }}</p>
+  }
+</div>
+<p>The merge operator merges two (or more) observables into one observable that emits the values from both observables in the order they are emitted.
+</p>
+<p>IT DOESN'T REMOVE REPEATED VALUES</p>

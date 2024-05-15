@@ -1,0 +1,43 @@
+<h1>RXJS Observables</h1>
+<p>Observables are data types that allow data streams to pass through them and use suscriptions to retrieve data from the stream.</p>
+<h2>Observable example</h2>
+<code>
+  const observable = of(1,2,3);
+  observable.subscribe((value) => console.log(value));
+</code>
+<div class="observable-container">
+  @for(item of valuesFromObservable; track $index){
+    <p>Observable value: {{ item }}</p>
+  }
+</div>
+<p>This observable was made with the keyword 'for' which creates an observable from a list of values and emits each item in the list one by one and then completes.</p>
+<h2>Why use observables instead of promises?</h2>
+<ul>
+  <li>
+    Observables are lazy, while promises are eager.
+  </li>
+  <li>
+    <p>Observables can be cancelled, while promises can't.</p>
+  </li>
+  <li>
+    <p>Observables can be sync and async, while Promises are always resolved asynchonously</p>
+  </li>
+  <li>
+    <p>Observables can be paused and resumed, while promises can't.</p>
+  </li>
+  <li>
+    <p>Observables can be composed, while promises can't.</p>
+  </li>
+  <li>
+    <p>Observables can be multicasted, while promises can't. Which means they can be observed be multiple subscribers while promises can't</p>
+  </li>
+  <li>
+    <p>Observables can be emit multiple values, while promises can only emit one value</p>
+  </li>
+  <li>
+    <p>Observables have multiple operators to transform data, whilst promises can only use then, catch and finally</p>
+  </li>
+  <li>
+    <p>Observables can be retried, while promises can't</p>
+  </li>
+</ul>

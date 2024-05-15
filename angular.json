@@ -5,7 +5,15 @@
   "projects": {
     "angular-concepts": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineStyle": true,
+          "skipTests": true,
+          "changeDetection": "OnPush",
+          "prefix": "ng",
+          "path": "/src/app/rxjs"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
