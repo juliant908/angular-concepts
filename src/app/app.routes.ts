@@ -60,6 +60,18 @@ export const routes: Routes = [
         path: "from-event",
         loadComponent: () => import("./rxjs/from-event/from-event.component").then(m => m.FromEventComponent)
       },
+      {
+        path: "with-latest-from-pipe",
+        loadComponent: () => import("./rxjs/with-latest-from-pipe/with-latest-from-pipe.component").then(m => m.WithLatestFromPipeComponent)
+      },
+      {
+        path: "concat-with-pipe",
+        loadComponent: () => import("./rxjs/concat-with-pipe/concat-with-pipe.component").then(m => m.ConcatWithPipeComponent)
+      },
+      {
+        path: "catch-error-pipe",
+        loadComponent: () => import("./rxjs/catch-error-pipe/catch-error-pipe.component").then(m => m.CatchErrorPipeComponent)
+      },
     ]
   }
 ];

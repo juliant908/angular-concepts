@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
 import { fromEvent } from 'rxjs';
 
 @Component({
@@ -25,11 +26,13 @@ import { fromEvent } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.Default
 })
 export class FromEventComponent implements OnInit{
-
-  valueFromEvent$ = fromEvent(document, 'click');
-  valueFromInput$ = fromEvent(document, 'input');
+  valueFromEvent$ = fromEvent(this.document, 'click');
+  valueFromInput$ = fromEvent(this.document, 'input');
   characterCount = 0;
   counter = 0;
+
+  constructor(@Inject(DOCUMENT) private document: Document) {}
+
   ngOnInit(): void {
       this.valueFromEvent$
         .subscribe(() => this.counter++);

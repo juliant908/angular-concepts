@@ -1,0 +1,16 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator withLatestFrom example</h2>
+<p>The withLatestFrom uses a main observable that takes values from secondary observables and generates a single result</p>
+<div>
+  @if(result$ | async; as result){
+    <p>{{result}}</p>
+  }
+  <form [formGroup]="mainForm">
+    <input type="text" formControlName="name">
+    <input type="text" formControlName="lastName">
+  </form>
+</div>
+
+<p>In this case the observable emits the value when the second input has any changes (which is the main observable) and takes the LATEST value FROM the secondary observable (first input).</p>
+<p>Is evident that you can change the value of the first input and the value emitted doesn't change because the principal observable doesn't emit a new value.</p>

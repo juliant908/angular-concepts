@@ -1,0 +1,19 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator concat example</h2>
+<code>
+  <div>const observable1 = of(1,2,3);</div>
+  <div>const observable2 = of(4,5,6);</div>
+  observable1.pipe(<span class="operator">concatWith</span>(observable2).subscribe((value) => console.log(value));
+</code>
+<div class="observable-container">
+  @for(item of valuesFromConcatWith; track $index){
+  <p>Observable value: {{ item }}</p>
+  }
+</div>
+<p>
+  concatWith is actually not a completely new operator. It's only meant to replace the concat operator which is
+  currently
+  marked as deprecated and will be removed in v8. There's one subtle difference between the two, though. concatWith only
+  accepts inputs of type ObservableInput, whereas concat can also take a scheduler.
+</p>
