@@ -48,6 +48,18 @@ export const routes: Routes = [
         path: "take-until-pipe",
         loadComponent: () => import("./rxjs/take-until-pipe/take-until-pipe.component").then(m => m.TakeUntilPipeComponent)
       },
+      {
+        path: "single-pipe",
+        loadComponent: () => import("./rxjs/single-pipe/single-pipe.component").then(m => m.SinglePipeComponent)
+      },
+      {
+        path: "start-with-pipe",
+        loadComponent: () => import("./rxjs/start-with-pipe/start-with-pipe.component").then(m => m.StartWithPipeComponent)
+      },
+      {
+        path: "from-event",
+        loadComponent: () => import("./rxjs/from-event/from-event.component").then(m => m.FromEventComponent)
+      },
     ]
   }
 ];

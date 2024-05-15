@@ -1,0 +1,16 @@
+<h1>RXJS FromEvent observables</h1>
+<p>FromEvent is an operator that allows us to create and observable from a DOM event such as clicks, inputs, etc to transform them into a data stream.</p>
+<h2>From event example</h2>
+<code>
+  const observable = fromEvent(document, 'click');
+  // document is the target
+  // click is the event
+</code>
+<div class="observable-container inputs">
+  <p>Click on the document to see the observable in action</p>
+  <p>You have clicked: {{ counter }} times</p>
+  <button (click)="resetCounter()">Reset counter</button>
+  <input type="text" placeholder="Enter text...">
+  <p>{{ characterCount }}</p>
+</div>
+

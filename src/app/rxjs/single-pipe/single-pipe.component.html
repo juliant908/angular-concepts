@@ -1,0 +1,29 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator <em>single</em> example</h2>
+<div class="observable-container">
+  <p>The only value that is divisible by 2 is:</p>
+  <p>{{ onlyValue }}</p>
+</div>
+<p>The single operator takes the values from the observable and returns only if ONE value matches the condition passed.
+</p>
+<p>It can return the following responses</p>
+<div>
+  <p>
+    MonoTypeOperatorFunction: A function that returns an Observable that emits the single item emitted by the source
+    Observable that matches the predicate.
+  </p>
+
+  <p>
+    NotFoundError Delivers a NotFoundError to the Observer's error callback if the Observable completes before any next
+    notification was sent.
+  </p>
+  <p>
+
+    SequenceError Delivers a SequenceError if more than one value is emitted that matches the provided predicate. If no
+    predicate is provided, it will deliver a SequenceError if more than one value comes from the source.
+  </p>
+  <p>
+    EmptyError Delivers an EmptyError if no values were nexted prior to completion.
+  </p>
+</div>
