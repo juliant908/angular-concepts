@@ -3,6 +3,7 @@
 <h2>Observable example</h2>
 <code>
   const observable = of(1,2,3);
+  const otherObservable = new Observable();
   observable.subscribe((value) => console.log(value));
 </code>
 <div class="observable-container">
@@ -10,7 +11,7 @@
     <p>Observable value: {{ item }}</p>
   }
 </div>
-<p>This observable was made with the keyword 'for' which creates an observable from a list of values and emits each item in the list one by one and then completes.</p>
+<p>This observable was made with the keyword 'of' which creates an observable from a list of values and emits each item in the list one by one and then completes.</p>
 <h2>Why use observables instead of promises?</h2>
 <ul>
   <li>

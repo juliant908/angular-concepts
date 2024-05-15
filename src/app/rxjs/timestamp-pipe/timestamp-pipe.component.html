@@ -1,1 +1,13 @@
-<p>timestamp-pipe works!</p>
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<div class="observable-container timestamp">
+  @for(item of valuesFromObservable; track item['value']){
+  <div>
+    <p>Observable value: {{ item['value'] }}</p>
+    <p>Timestamp: {{ item['timestamp'] }}</p>
+  </div>
+  }
+</div>
+<p>The timestamp operator adds a timestamp to the value being passed through the data stream
+</p>
+

@@ -1,0 +1,13 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<h2>Operator take until example</h2>
+<code>
+  <div>const observable1 = of(1,2,3);</div>
+  this.observable1.pipe(<span class="operator">takeUntil(this.stop$)</span>.subscribe((value) => console.log(value));
+</code>
+<div class="observable-container">
+  <button (click)="start()">Start</button>
+  <button (click)="stop()">Stop</button>
+  <p>Counter value: {{ counter }}</p>
+</div>
+<p>The take until operator takes the values from the observable until the observable passed as parameter emits a value</p>

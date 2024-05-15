@@ -1,0 +1,35 @@
+<h1>RXJS Subjects</h1>
+<p>Subjects are a special type of Observable that allows values to be multicasted to many Observers. While plain Observables are unicast (each subscribed Observer owns an independent execution of the Observable), Subjects are multicast.</p>
+<h2>Subject example</h2>
+<code>
+  const subject = new Subject();
+</code>
+<div class="observable-container">
+  {{ subject$ | async}}
+  <form (submit)="setValue($event)">
+    <input type="number">
+    <button>Set value of subject manually to any number</button>
+  </form>
+</div>
+<h2>Why use subjects instead of observables?</h2>
+<ul>
+  <li>
+    Multicasting: Observables are unicast by default. This means each subscribed observer owns an independent execution of the Observable.
+    Subjects, on the other hand, are multicast. This means they can have multiple observers and when a value is emitted, it
+    is passed to each observer.
+  </li>
+  <li>
+    <p>Value emitting: Observables are passive; they emit values when they are subscribed to and the code inside the Observable function runs.
+    Subjects, however, are active; you can manually call 'next(value)'' to emit a value.</p>
+  </li>
+  <li>
+    <p>Subscription: With an Observable, you can't manually add or remove observers. With a Subject, you can manually manage observers
+    through the 'add(observer)' and 'remove(observer)' methods.</p>
+  </li>
+  <li>
+    <p>Replay of values: Regular Observables do not replay old values to new subscribers. Subjects, however, have variations like ReplaySubject
+    and BehaviorSubject that can replay old values to new subscribers.</p>
+  </li>
+</ul>
+<p>In summary, you would use an Observable when you want to create a stream of values, and a Subject when you want to
+multicast values to multiple observers or manually control when a value is emitted.</p>

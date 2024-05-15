@@ -9,6 +9,10 @@ export const routes: Routes = [
         loadComponent: () => import("./rxjs/observables/observables.component").then(m => m.ObservablesComponent)
       },
       {
+        path: "subjects",
+        loadComponent: () => import("./rxjs/subjects/subjects.component").then(m => m.SubjectsComponent)
+      },
+      {
         path: "map-pipe",
         loadComponent: () => import("./rxjs/map-pipe/map-pipe.component").then(m => m.MapPipeComponent)
       },
@@ -31,6 +35,18 @@ export const routes: Routes = [
       {
         path: "delay-pipe",
         loadComponent: () => import("./rxjs/delay-pipe/delay-pipe.component").then(m => m.DelayPipeComponent)
+      },
+      {
+        path: "timestamp-pipe",
+        loadComponent: () => import("./rxjs/timestamp-pipe/timestamp-pipe.component").then(m => m.TimestampPipeComponent)
+      },
+      {
+        path: "switch-map-pipe",
+        loadComponent: () => import("./rxjs/switch-map-pipe/switch-map-pipe.component").then(m => m.SwitchMapPipeComponent)
+      },
+      {
+        path: "take-until-pipe",
+        loadComponent: () => import("./rxjs/take-until-pipe/take-until-pipe.component").then(m => m.TakeUntilPipeComponent)
       },
     ]
   }

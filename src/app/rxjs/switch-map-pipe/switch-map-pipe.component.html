@@ -1,0 +1,13 @@
+<h1>RXJS Operators</h1>
+<p>Operators are RXJS tools that can transform the data being passed through the data stream</p>
+<div class="observable-container timestamp">
+  <input type="text" (keyup)="search($event)" placeholder="Type something here">
+  @if(results$ | async; as results){
+    @for(result of results; track result.name){
+      <p>{{ result.name }}</p>
+    }
+  }
+</div>
+<p>The switchMap operator maps each value to an observable, then flattens all of these inner observables into a single observable.</p>
+<p>It can be used to recall actions whenever an Observable changes it's value.</p>
+<p>It can also cancel ongoing calls to save memory and generate new requests as needed.</p>

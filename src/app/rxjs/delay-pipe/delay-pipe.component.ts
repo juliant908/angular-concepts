@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Key } from 'readline';
-import { Observable, delay, map, of } from 'rxjs';
+import { delay, of } from 'rxjs';
 
 @Component({
   selector: 'ng-delay-pipe',

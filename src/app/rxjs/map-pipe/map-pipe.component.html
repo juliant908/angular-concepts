@@ -12,3 +12,9 @@
 </div>
 <p>The map operator takes each value from the observable one by one and transforms it using the operation defined inside</p>
 <p>In this case it takes the value and multiplies it by two</p>
+<div class="observable-container">
+  @for(item of testValues; track item.name){
+  <p>Name value: {{ item.name }}</p>
+  <p>Age value: {{ item.age }}</p>
+  }
+</div>
