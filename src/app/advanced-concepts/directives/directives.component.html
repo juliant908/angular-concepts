@@ -1,0 +1,251 @@
+<h1>Angular directives</h1>
+
+<p>Directives are a way to manipulate the DOM in Angular</p>
+
+<h2>Structural directives</h2>
+
+<p>Structural directives are a way to manipulate the DOM by adding or removing elements</p>
+
+<h3>ngIf</h3>
+
+<p>ngIf is a directive that removes or adds an element to the DOM depending on the condition</p>
+
+<code>
+  div *ngIf="showElement">
+    <p>Element is shown</p>
+  div
+</code>
+
+<p>Since Angular 17 it has been changed to the {{'@if'}} sintax</p>
+
+<code>
+  {{'@if(condition)'}}&#123;
+    <p>Element is shown</p>
+  &#125;
+</code>
+
+<h3>ngFor</h3>
+
+<p>ngFor is a directive that repeats an element for each item in an array</p>
+
+<code>
+  div *ngFor="let item of items">
+    <p>{{ 'item' }}</p>
+  div
+</code>
+
+<p>Since Angular 17 it has been changed to the {{'@for'}} sintax</p>
+
+<code>
+  {{'@for(let item of items)'}}&#123;
+    <p>{{ 'item' }}</p>
+  &#125;
+</code>
+
+<h2>Attribute directives</h2>
+
+<p>Attribute directives are a way to manipulate the DOM by changing the element's attributes</p>
+
+<h3>ngStyle</h3>
+
+<p>ngStyle is a directive that changes the element's style</p>
+
+<code>
+  div [ngStyle]="&#123; 'color': 'red' &#125;">
+    <p>Element with red color</p>
+  div
+</code>
+
+<h3>Custom directives</h3>
+
+<p>Custom directives are a way to create your own directives</p>
+
+<code>
+  div appCustomDirective>
+    <p>Element with custom directive</p>
+  div
+</code>
+
+<p>Custom directives are created with the {{'@Directive'}} decorator</p>
+
+<code>
+  {{'@Directive'}}(&#123;
+    selector: '[appCustomDirective]'
+  &#125;)
+  export class CustomDirective &#123;
+    constructor(private el: ElementRef) &#123;
+      el.nativeElement.style.color = 'blue';
+    &#125;
+  &#125;
+</code>
+
+<p>Custom directives can also be used to create reusable components</p>
+
+<h3>HostListener</h3>
+
+<p>HostListener is a decorator that listens to events on the host element</p>
+
+<code>
+  {{'@HostListener'}}('click')
+  onClick() &#123;
+    alert('Element clicked');
+  &#125;
+</code>
+
+<p>HostListener can also be used to listen to events on the window or document</p>
+
+<code>
+  {{'@HostListener'}}('window:scroll')
+  onScroll() &#123;
+    alert('Window scrolled');
+  &#125;
+</code>
+
+<h3>HostBinding</h3>
+
+<p>HostBinding is a decorator that binds a property to the host element</p>
+
+<code>
+  {{'@HostBinding'}}('style.color')
+  color = 'red';
+</code>
+
+<p>HostBinding can also be used to bind a property to the window or document</p>
+
+<code>
+  {{'@HostBinding'}}('window.location.href')
+  href = 'https://angular.io';
+</code>
+
+<h2>Directive input</h2>
+
+<p>Directives can have inputs that can be passed from the parent component</p>
+
+<code>
+  div appCustomDirective [color]="'blue'">
+    <p>Element with custom directive</p>
+  div
+</code>
+
+<p>Inputs are defined with the {{'@Input'}} decorator</p>
+
+<code>
+  {{'@Input()'}} color: string;
+</code>
+
+<h2>Directive output</h2>
+
+<p>Directives can have outputs that can be emitted to the parent component</p>
+
+<code>
+  div appCustomDirective (click)="onClick()">
+    <p>Element with custom directive</p>
+  div
+</code>
+
+<p>Outputs are defined with the {{'@Output'}} decorator</p>
+
+<code>
+  {{'@Output()'}} click = new EventEmitter();
+</code>
+
+<p>Outputs can be emitted with the {{'emit'}} method</p>
+
+<code>
+  onClick() &#123;
+    this.click.emit();
+  &#125;
+</code>
+
+<h2>Custom directive examples</h2>
+
+<p>Here are some examples of custom directives</p>
+
+<div>
+  <h3>Uppercase directive - Using {{'@HostBinding'}}</h3>
+
+  <p tab-index="0" ngHostBinding>Uppercase directive changes the case of the element</p>
+
+  <code>
+    {{'@Directive'}}(&#123;
+      selector: '[ngHostBinding]'
+    &#125;)
+    export class HostListenerDirective &#123;
+      constructor(private el: ElementRef) &#123;
+      &#125;
+  <br>
+      {{'@HostListener'}}('mouseenter')
+      onMouseEnter() &#123;
+        el.nativeElement.style.backgroundColor = 'blue';
+      &#125;
+  <br>
+      {{'@HostListener'}}('mouseleave')
+      onMouseLeave() &#123;
+        el.nativeElement.style.backgroundColor = 'violet';
+      &#125;
+    &#125;
+  </code>
+
+  <p>This was achieved using the {{'@HostListener'}} directive which allows us to listen to events in a particular element and apply any logic we want to them!</p>
+</div>
+
+<div>
+  <h3>Highlight directive - Using {{'@HostListener'}}</h3>
+
+  <p ngHostListener>Highlight directive changes the background color of an element when the mouse is over it</p>
+
+  <code>
+    {{'@Directive'}}(&#123;
+      selector: '[appHighlight]'
+    &#125;)
+    export class HighlightDirective &#123;
+      constructor(private el: ElementRef) &#123;
+      &#125;
+  <br>
+      {{'@HostListener'}}('mouseenter')
+      onMouseEnter() &#123;
+        el.nativeElement.style.backgroundColor = 'blue';
+      &#125;
+  <br>
+      {{'@HostListener'}}('mouseleave')
+      onMouseLeave() &#123;
+        el.nativeElement.style.backgroundColor = 'violet';
+      &#125;
+    &#125;
+  </code>
+
+  <p>This was achieved using the {{'@HostListener'}} directive which allows us to listen to events in a particular element and apply any logic we want to them!</p>
+</div>
+
+<div>
+  <h3>Highlight directive - Using {{'@Input'}}</h3>
+
+  <p [color]="'blue'" ngInput>Highlight directive changes the background color of an element when the mouse is over it</p>
+
+  <code>
+    {{'@Directive'}}(&#123;
+      selector: '[ngInput]'
+    &#125;)
+    export class InputDirective &#123;
+      constructor(private el: ElementRef) &#123;
+      &#125;
+  <br>
+  {{'@Input()'}} color!: string;
+
+  {{'@HostListener'}}('mouseenter') onMouseEnter() &#123;
+  this.el.nativeElement.style.color = this.color;
+  &#125;
+  </code>
+
+  <p>This was achieved using the {{'@Input'}} directive which allow for user input to handle the directive.</p>
+</div>
+
+<p ngNonBindable>Important: Always prefer using the host property over &#64;HostBinding and &#64;HostListener. These decorators exist exclusively for backwards compatibility.</p>
+
+<h2>Host property</h2>
+
+<p>The host property is a way to access the host element in a directive</p>
+
+<h3>Host property example</h3>
+
+<ng-host />

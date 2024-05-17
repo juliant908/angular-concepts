@@ -1,0 +1,12 @@
+<h2>On push change detection</h2>
+
+<p>On push change detection is a strategy that tells Angular to only check for changes when the input reference changes, an event listener is triggered or if there's changes in an async pipe observable</p>
+
+<p>It's a good practice to use this strategy when you have a component that doesn't need to be checked for changes all the time</p>
+
+<p>This strategy also goes up the component tree and checks only the components that are affected by the changes.</p>
+
+<div>
+  Counter: {{ counter }}
+  <button (click)="checkChanges()">Dispatch event</button>
+</div>

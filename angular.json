@@ -11,7 +11,12 @@
           "skipTests": true,
           "changeDetection": "OnPush",
           "prefix": "ng",
-          "path": "/src/app/rxjs"
+          "path": "/src/app/advanced-concepts"
+        },
+        "@schematics/angular:directive": {
+          "prefix": "ng",
+          "path": "/src/app/advanced-concepts",
+          "skipTests": true
         }
       },
       "root": "",

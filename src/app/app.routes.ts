@@ -73,5 +73,22 @@ export const routes: Routes = [
         loadComponent: () => import("./rxjs/catch-error-pipe/catch-error-pipe.component").then(m => m.CatchErrorPipeComponent)
       },
     ]
+  },
+  {
+    path: "advanced-concepts",
+    children: [
+      {
+        path: "change-detection",
+        loadComponent: () => import("./advanced-concepts/change-detection/change-detection.component").then(m => m.ChangeDetectionComponent)
+      },
+      {
+        path: "directives",
+        loadComponent: () => import("./advanced-concepts/directives/directives.component").then(m => m.DirectivesComponent)
+      },
+      {
+        path: "host-attribute-token",
+        loadComponent: () => import("./advanced-concepts/host-attribute-token/host-attribute-token.component").then(m => m.HostAttributeTokenComponent)
+      },
+    ]
   }
 ];

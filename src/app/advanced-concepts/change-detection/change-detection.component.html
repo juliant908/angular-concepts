@@ -1,0 +1,41 @@
+<h1>How change detection works in angular</h1>
+
+<div class="change-detection">
+  <ng-onpush></ng-onpush>
+  <ng-default></ng-default>
+</div>
+
+<p>As you can see the component on the left only displays a change when you click on the button because of the ChangeDetectionStrategy.OnPush</p>
+
+<p>On the other hand the component on the right displays a change immediately because it's ChangeDetectionStrategy is on Default</p>
+
+<div class="scenarios">
+  <h2>Change detection scenarios</h2>
+  <h3>Scenario 1: every component has the default strategy</h3>
+  <p>An event is triggered in a component</p>
+  <img src="../../../assets/images/scenario1-p1.png">
+  <p>Angular checks every component for changes and goes through the whole component tree</p>
+  <img src="../../../assets/images/scenario1-p2.png">
+  <h3>Scenario 2: one component has on push strategy and an event is triggered in other component</h3>
+  <p>An event is triggered in a component different from the OnPush component</p>
+  <img src="../../../assets/images/scenario2-p1.png">
+  <p>If the component with the OnPush strategy isn't marked as dirty (hasn't changed), angular will skip its checking and its children's checking</p>
+  <img src="../../../assets/images/scenario2-p2.png">
+  <h3>Scenario 3: one component has on push strategy and an event is triggered in other component which changes the input of the on push component</h3>
+  <p>An event is triggered in a component different from the OnPush component and changes the input of the OnPush component</p>
+  <img src="../../../assets/images/scenario3-p1.png">
+  <p>Angular will check the OnPush component and its children becasue it is marked as dirty (OnPush change detection is triggered)</p>
+  <img src="../../../assets/images/scenario3-p2.png">
+  <h3>Scenario 4: a parent component has on push strategy and one of its children has on push strategy as well</h3>
+  <p>An event is triggered in a component which changes the input of the parent on push component</p>
+  <img src="../../../assets/images/scenario4-p1.png">
+  <p>Angular marks the parent component as dirty, but then when checking the children angular notices that it is dirty so it skips the change detection for the child element</p>
+  <img src="../../../assets/images/scenario4-p2.png">
+  <h3>Scenario 5: every component has on push change detection strategy</h3>
+  <p>An event is triggered in a component</p>
+  <img src="../../../assets/images/scenario5-p1.png">
+  <p>Angular marks the component an all of its ancestors for checking</p>
+  <img src="../../../assets/images/scenario5-p2.png">
+  <p>Angular checks the marked components</p>
+  <img src="../../../assets/images/scenario5-p3.png">
+</div>
