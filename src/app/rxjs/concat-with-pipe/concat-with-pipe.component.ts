@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable, concatWith, map, of, startWith, tap } from 'rxjs';
+import { concatWith, map, of } from 'rxjs';
 
 @Component({
   selector: 'ng-concat-with-pipe',

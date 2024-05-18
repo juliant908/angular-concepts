@@ -20,8 +20,8 @@ import { delay, of } from 'rxjs';
 export class DelayPipeComponent {
   result = '';
 
-  typeWord(key: any){
-    const balls = of(key.target?.value)
+  typeWord(key: KeyboardEvent){
+    const balls = of((key.target as HTMLInputElement)?.value)
     return balls.pipe(
       delay(1000),
     ).subscribe((val: string) => this.result = val);

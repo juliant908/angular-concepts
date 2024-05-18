@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Subject, map } from 'rxjs';
+import { Subject } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
 @Component({

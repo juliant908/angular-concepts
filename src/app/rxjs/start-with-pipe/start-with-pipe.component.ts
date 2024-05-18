@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable, interval, map, startWith, takeUntil, tap } from 'rxjs';
+import { Observable, map, startWith, tap } from 'rxjs';
 
 @Component({
   selector: 'ng-start-with-pipe',
@@ -22,11 +22,11 @@ import { Observable, interval, map, startWith, takeUntil, tap } from 'rxjs';
 export class StartWithPipeComponent implements OnInit{
   counter$!: Observable<number>;
   ngOnInit(): void {
-    // this.counter$.pipe(
-    //   startWith(-2),
-    //   map(val => val + 1),
-    //   tap(val => console.log(val))
-    // ).subscribe();
+    this.counter$.pipe(
+      startWith(-2),
+      map(val => val + 1),
+      tap(val => console.log(val))
+    ).subscribe();
   }
 
 }

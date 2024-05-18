@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { of, tap, timestamp } from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { of, timestamp } from 'rxjs';
 
 @Component({
   selector: 'ng-timestamp-pipe',
@@ -31,7 +31,7 @@ import { of, tap, timestamp } from 'rxjs';
   `,
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class TimestampPipeComponent {
+export class TimestampPipeComponent implements OnInit{
   observable = of(1, 2, 3)
   valuesFromObservable: Record<string, number>[] = []
 

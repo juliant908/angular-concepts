@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { concat, of } from 'rxjs';
 
 @Component({
@@ -18,7 +18,7 @@ import { concat, of } from 'rxjs';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ConcatComponent {
+export class ConcatComponent implements OnInit{
   observable1 = of(1, 2, 3)
   observable2 = of(3, 4, 5, 6)
   valuesFromConcat: number[] = [];

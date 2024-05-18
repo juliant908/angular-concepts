@@ -89,6 +89,10 @@ export const routes: Routes = [
         path: "host-attribute-token",
         loadComponent: () => import("./advanced-concepts/host-attribute-token/host-attribute-token.component").then(m => m.HostAttributeTokenComponent)
       },
+      {
+        path: "solid",
+        loadComponent: () => import("./advanced-concepts/solid/solid.component").then(m => m.SOLIDComponent)
+      },
     ]
   }
 ];

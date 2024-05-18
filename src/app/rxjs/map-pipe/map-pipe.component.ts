@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { of, map, tap } from 'rxjs';
+import { of, map } from 'rxjs';
 
 interface Person {
   name: string;
@@ -49,7 +49,7 @@ export class MapPipeComponent implements OnInit{
     });
   }
 
-  normalizeData(data: any) {
+  normalizeData(data: { firstName: string, personAge: number }) {
     return {
       name: data.firstName,
       age: data.personAge
